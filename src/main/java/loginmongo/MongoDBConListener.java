@@ -22,7 +22,7 @@ public class MongoDBConListener implements ServletContextListener {
         try {
             ServletContext ctx = sce.getServletContext();
 
-            client = new MongoClient(ctx.getInitParameter("MONGODB_HOST"),// Database host
+            client = new MongoClient(ctx.getInitParameter("MONGO_HOST"),// Database host
                     Integer.parseInt(ctx.getInitParameter("MONGO_PORT"))); // Connecting port
             DB db = client.getDB(ctx.getInitParameter("MONGO_DBNAME")); // get the database name
             dbcoll = db.getCollection(ctx.getInitParameter("MONGO_COLLECTION")); // get the collection(table)
